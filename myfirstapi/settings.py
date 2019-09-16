@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import dj_database_url
-from dj_database_url import config
+
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -78,20 +78,20 @@ WSGI_APPLICATION = 'myfirstapi.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#database
 DATABASES = {
     'default': dj_database_url.config(
-        default=config('DATABASE_URL')
+        default=os.environ.get('DATABASE_URL')
     )
 }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME', 'postgres'),
-        'USER': os.environ.get('DB_USER', 'postgres'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'kamlesh'),
-        'PORT': os.environ.get('DB_PORT', '5432'),
-        'HOST': os.environ.get('DB_HOST', 'localhost'),
-
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ.get('DB_NAME', 'postgres'),
+#         'USER': os.environ.get('DB_USER', 'postgres'),
+#         'PASSWORD': os.environ.get('DB_PASSWORD', 'kamlesh'),
+#         'PORT': os.environ.get('DB_PORT', '5432'),
+#         'HOST': os.environ.get('DB_HOST', 'localhost'),
+#
+#     }
+# }
 AUTH_USER_MODEL = 'core.User'
 
 REST_FRAMEWORK = {
