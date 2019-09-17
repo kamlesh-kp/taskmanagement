@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'myfirstapi.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#database
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL')
+        default=os.environ.get('postgres://jzlddywdoisrht:079c6087943335f3db66c280980d26f033c53b664716a6ac92749be5e3d58e91@ec2-54-235-92-43.compute-1.amazonaws.com:5432/d8tpjg16v6c0d0')
     )
 }
 DATABASES = {
