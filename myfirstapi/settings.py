@@ -81,17 +81,6 @@ DATABASES = {
         default=os.environ.get('DATABASE_URL')
     )
 }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME', ' d8tpjg16v6c0d0'),
-        'USER': os.environ.get('DB_USER', 'jzlddywdoisrht'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', '079c6087943335f3db66c280980d26f033c53b664716a6ac92749be5e3d58e91'),
-        'PORT': os.environ.get('DB_PORT', '5432'),
-        'HOST': os.environ.get('DB_HOST', 'ec2-54-235-92-43.compute-1.amazonaws.com'),
-
-    }
-}
 AUTH_USER_MODEL = 'core.User'
 
 REST_FRAMEWORK = {
