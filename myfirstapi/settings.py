@@ -81,17 +81,17 @@ DATABASES = {
         default=os.environ.get('DATABASE_URL')
     )
 }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': os.environ.get('DB_NAME', 'postgres'),
-#         'USER': os.environ.get('DB_USER', 'postgres'),
-#         'PASSWORD': os.environ.get('DB_PASSWORD', 'kamlesh'),
-#         'PORT': os.environ.get('DB_PORT', '5432'),
-#         'HOST': os.environ.get('DB_HOST', 'localhost'),
-#
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('DB_NAME', 'postgres'),
+        'USER': os.environ.get('DB_USER', 'postgres'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'kamlesh'),
+        'PORT': os.environ.get('DB_PORT', '5432'),
+        'HOST': os.environ.get('DB_HOST', 'localhost'),
+
+    }
+}
 AUTH_USER_MODEL = 'core.User'
 
 REST_FRAMEWORK = {
