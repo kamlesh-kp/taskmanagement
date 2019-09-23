@@ -79,8 +79,6 @@ WSGI_APPLICATION = 'myfirstapi.wsgi.application'
 # DATABASES = {'default': dj_database_url.config(
 #         default=os.environ.get('DATABASE_URL'))
 # }
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 DATABASES = {
     'default': {
@@ -93,6 +91,9 @@ DATABASES = {
     }
 
 }
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
 
 AUTH_USER_MODEL = 'core.User'
 
