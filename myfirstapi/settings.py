@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-import DATABASES as DATABASES
 import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -80,8 +79,8 @@ WSGI_APPLICATION = 'myfirstapi.wsgi.application'
 # DATABASES = {'default': dj_database_url.config(
 #         default=os.environ.get('DATABASE_URL'))
 # }
-
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 DATABASES = {
     'default': {
